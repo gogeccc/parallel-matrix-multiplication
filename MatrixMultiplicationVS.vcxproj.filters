@@ -39,6 +39,9 @@
     <ClCompile Include="benchmark.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CLI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="parallel_multiplication.hpp">
@@ -60,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="benchmark.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLI.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

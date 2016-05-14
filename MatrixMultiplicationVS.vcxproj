@@ -161,6 +161,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="benchmark.cpp" />
+    <ClCompile Include="CLI.cpp" />
     <ClCompile Include="defines.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrices.cpp" />
@@ -171,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="benchmark.hpp" />
+    <ClInclude Include="CLI.hpp" />
     <ClInclude Include="defines.hpp" />
     <ClInclude Include="matrices.hpp" />
     <ClInclude Include="multiplication.hpp" />

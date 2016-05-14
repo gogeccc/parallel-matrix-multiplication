@@ -207,8 +207,6 @@ std::string Benchmark::get_results_string()
 	{
 		//TODO: popuni string rezultatima
 		output = "";
-		//#define na brzaka, sto bi se reklo xD
-#define LINIJA "----------------------------------------------\n"
 		output += LINIJA;
 		std::map<UINT_, Benchmark::results_t>::iterator pair_ = results_per_size.begin();
 		//prolazimo kroz rezultat za svaku velicinu i dodajemo podatke u string
