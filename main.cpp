@@ -2,6 +2,7 @@
 #include "multiplication.hpp"
 #include "parallel_multiplication.hpp"
 #include "UI.hpp"
+#include "benchmark.hpp"
 #include "defines.hpp"
 #include <iostream>
 #include <fstream>
