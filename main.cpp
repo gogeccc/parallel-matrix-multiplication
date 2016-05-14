@@ -14,11 +14,11 @@ int main_tests()
 {
 	//pripremamo parametre
 	Benchmark::algorithms_t algs = Benchmark::get_algorithms_struct();
-	Benchmark::set_algorithms(algs, benchmark::algorithms::arma, benchmark::test::yes);
-	Benchmark::set_algorithms(algs, benchmark::algorithms::serial, benchmark::test::no);
+	Benchmark::set_algorithms(algs, benchmark::algorithms::arma, benchmark::test::no);
+	Benchmark::set_algorithms(algs, benchmark::algorithms::serial, benchmark::test::yes);
 	Benchmark::set_algorithms(algs, benchmark::algorithms::parallel, benchmark::test::no);
 	//konstruisemo klasu
-	Benchmark bench = Benchmark(100u, 500u, 50u, algs, 5u);
+	Benchmark bench = Benchmark(500u, 500u, 1u, algs, 1u);
 	//demonstracija koriscenja metoda klase
 	if (bench.is_good())
 	{

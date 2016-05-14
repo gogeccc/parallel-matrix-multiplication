@@ -35,7 +35,7 @@
                                     i koristi rand()
 /////////////////////////////////////////////////////
 
-+ui funkcije (class UI):
+=ui funkcije (class UI):
 	podesi radni folder - default radni folder: define NOT_SET ""
 	/// counter se postavlja na 0 pri pokretanju programa
 	=generisi parove matrica (broj parova, min size, max size) (pair name = filename = DateHrMinSecMilisecCOUNTER.pair)
@@ -62,7 +62,36 @@
 
 
 
-class CLI
++class CLI
+{
+	//sta sve treba uraditi (kako izgleda meni):
+	LINIJA
+	- trenutni radni direktorijum : DIR_NOT_SET
+	- par matrica ucitan/generisan: 0/1
+	- par matrica pomnozen        : 0/1
+	- benchmark izvrsen           : 0/1
+	[1] Podesi radni direktorijum
+	[2] Ucitaj par matrica iz fajla
+	[3] Generisi par matrica
+	[4] Prikazi ucitane/generisane matrice
+	[5] Sacuvaj par matrica u fajl
+	[6] Pomnozi ucitane/generisane matrice
+	[7] Prikazi proizvod i vreme mnozenja
+	[8] Izvrsi benchmark
+	[9] Sacuvaj rezultate bencmark-a u .txt fajl
+} 
+ponasanje: 
+{
+	upozorenje ako korisnik pokusava da ucita par matrica a radni direktorijum nije podesen
+	--ako je broj kolona matrica veci od 9, pitas da li da prikazes - mozda nece stati na ekran
+	upozorenje ako pokusava da sacuva par matrica a nema sta da sacuva / nije podesen direktorijum
+	upozorenje ako pokusava da pomnozi a nema sta
+	--upozorenje za proizvod, vreme i algoritam se prikazuju svakako
+	prikaz err msg ako se unesu pogresni parametri za benchmark
+	upozorenje ako nema rezultata benchmarka za cuvanje
+
+
+}
 
 class GUI
 

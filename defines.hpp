@@ -15,6 +15,9 @@
 //podrazumevani radni folder
 #define DIR_NOT_SET ""
 
+//koristice se na raznim mestima (meniji, ispisi itd)
+#define LINIJA "----------------------------------------------\n"
+
 //smanjuje broj karaktera u kodu
 // (UINT je vec koriscen u jednom headeru windows biblioteke, otuda UINT_)
 typedef unsigned int UINT_;
