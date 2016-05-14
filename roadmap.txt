@@ -1,0 +1,69 @@
+=typedef Mat<int> matrix
+=typedef struct foo {string pair_name, int serial_time, int parallel_time, matrix multiplier, matrix multiplicand, matrix product} matrix_triple;
+=matrix_triple* random matrix pair generator (matrix_triple* matrix_triple_, int _range, int pivot)
+=bool save pair (matrix_triple* matrix_triple_, string filepath)
+=bool load pair (matrix_triple* matrix_triple_, string filepath)
+=matrix_triple* multiply pair (matrix_triple* matrix_triple_, multiply::parallel || multiply::serial - default multiply::serial)
+=matrix_triple* serial multiplication (matrix_triple* matrix_triple_)
+
+////////////
+// POVECANJE PARALELIZACIJE: PARALLEL FOR ZA TRECU PETLJU
+// PROMENLJIVA bool parallel_for_required KAO USLOV ZA PARALELNO IZVRSAVANJE PARALLEL FOR-A
+// parallel_for_required ZAVISI OD TOGA DA LI JE DOSTIGNUTA CILJANA DUBINA
+// (AKO NIJE DOSTIGNUTA CILJANA DUBINA, NISU UPOSLJENA SVA JEZGRA)
+///////////// hm, da li svaki task treba da kreira parallel for sa ovim brojem threadova?
+///////////// neka kreira, tbb task scheduler ce se pobrinuti oko rasporedjivanja
+///////////// !!!!!!!!!! proveri kako radi parallel for, da li se rasporedjuje kao i taskovi
+// UINT_ spawned_tasks_at_curr_depth = current_depth^4;
+// double n_required_threads_per_task = (double)(no_cores - spawned_tasks_at_curr_depth)/spawned_tasks_at_curr_depth
+// UINT_ n_parallel_for_threads = n_required_threads_per_task;
+// double max_factor_spawned_threads_per_free_core = 1 / 16 //maksimalno 16 spawnovanih threadova po slobodnom jezgru
+// double actual_factor_spawned_threads_per_free_core = (double)n_required_threads_per_task / spawned_tasks_at_curr_depth;
+// if (n_parallel_for_threads == 0 and actual_factor_spawned_threads_per_free_core > max_factor_spawned_threads_per_free_core)
+//   {
+//    n_parallel_for_threads == 1;
+//   }
+/////////////
+///////////
+
+/////////////////////////////////////////////////////
+// dodati proveru random_device-a: vrtiti petlju 1000 puta, generisati broj i porediti ga sa prethodnih nekoliko;
+                                    ukoliko je jednak sa bilo kojim, uvecati neki brojac.
+                                    ako je brojac > od neke tolerancije, onda nesto nije ok;
+                                    prijavi gresku na konzolu
+                                    prijavi i upozorenje o ne bas random vrednostima
+                                    i koristi rand()
+/////////////////////////////////////////////////////
+
++ui funkcije (class UI):
+	podesi radni folder - default radni folder: define NOT_SET ""
+	/// counter se postavlja na 0 pri pokretanju programa
+	=generisi parove matrica (broj parova, min size, max size) (pair name = filename = DateHrMinSecMilisecCOUNTER.pair)
+	=ucitaj ranije generisane parove matrica iz fajlova u radnom folderu (pair name = filename)
+	=pomnozi ucitane parove serijski, prikazi i sacuvaj rezultatnu matricu - prikazivanje je opciono (filename: pair_name.serial.product)
+	=pomnozi ucitane parove paralelno, prikazi i sacuvaj rezultatnu matricu - prikazivanje je opciono (filename: pair_name.parallel.product)
+	+benchmark: random generisane matrice 100x100, 200x200, 300x300... 1000x1000
+
+//////////////////////////////
+//////// BENCHMARK KLASA
+		funkcionalnosti:
+			pokreni benchmark gde specificiras:
+				dimenzije matrica(od, do, korak);
+				koje sve algoritme testirati;
+				broj ciklusa;
+			pribavi strukturu sa rezultatima
+			pribavi formatiran string sa rezultatima
+
+		implementacija:
+////////////////////////////////
+
+
+
+
+
+
+class CLI
+
+class GUI
+
+/// bilo bi lepo da uradim gui. ako ne, uraditi cli je trivijalan zadatak.
