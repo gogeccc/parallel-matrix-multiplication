@@ -7,4 +7,3 @@ bool operator==(matrix& first, matrix& second)
 	return arma::approx_equal(first, second, "absdiff", 0);
 }
 
-
