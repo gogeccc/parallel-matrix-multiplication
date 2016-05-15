@@ -160,25 +160,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="benchmark.cpp" />
-    <ClCompile Include="CLI.cpp" />
+    <ClCompile Include="benchmark\benchmark.cpp" />
     <ClCompile Include="defines.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="matrices.cpp" />
-    <ClCompile Include="multiplication.cpp" />
-    <ClCompile Include="parallel_multiplication.cpp" />
-    <ClCompile Include="random.cpp" />
-    <ClCompile Include="UI.cpp" />
+    <ClCompile Include="matrices\matrices.cpp" />
+    <ClCompile Include="matrices\random.cpp" />
+    <ClCompile Include="multiplication\multiplication.cpp" />
+    <ClCompile Include="multiplication\parallel_multiplication.cpp" />
+    <ClCompile Include="UI\CLI.cpp" />
+    <ClCompile Include="UI\UI.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="benchmark.hpp" />
-    <ClInclude Include="CLI.hpp" />
+    <ClInclude Include="benchmark\benchmark.hpp" />
     <ClInclude Include="defines.hpp" />
-    <ClInclude Include="matrices.hpp" />
-    <ClInclude Include="multiplication.hpp" />
-    <ClInclude Include="parallel_multiplication.hpp" />
-    <ClInclude Include="random.hpp" />
-    <ClInclude Include="UI.hpp" />
+    <ClInclude Include="matrices\matrices.hpp" />
+    <ClInclude Include="matrices\random.hpp" />
+    <ClInclude Include="multiplication\multiplication.hpp" />
+    <ClInclude Include="multiplication\parallel_multiplication.hpp" />
+    <ClInclude Include="UI\CLI.hpp" />
+    <ClInclude Include="UI\UI.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="roadmap.txt" />

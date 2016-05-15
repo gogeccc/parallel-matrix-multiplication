@@ -1,8 +1,8 @@
-#include "matrices.hpp"
-#include "multiplication.hpp"
-#include "parallel_multiplication.hpp"
-#include "UI.hpp"
-#include "benchmark.hpp"
+#include "matrices/matrices.hpp"
+#include "multiplication/multiplication.hpp"
+#include "multiplication/parallel_multiplication.hpp"
+#include "UI/UI.hpp"
+#include "benchmark/benchmark.hpp"
 #include "defines.hpp"
 #include <iostream>
 #include <fstream>
