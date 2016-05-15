@@ -13,7 +13,8 @@
 
 
 //podrazumevani radni folder
-#define DIR_NOT_SET ""
+//
+#define DIR_NOT_SET "/\\DIR_NOT_SET/\\"
 
 //koristice se na raznim mestima (meniji, ispisi itd)
 #define LINIJA "----------------------------------------------\n"

@@ -79,6 +79,7 @@
 	[7] Prikazi proizvod i vreme mnozenja
 	[8] Izvrsi benchmark
 	[9] Sacuvaj rezultate bencmark-a u .txt fajl
+	>> 
 } 
 ponasanje: 
 {
