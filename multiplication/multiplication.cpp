@@ -17,6 +17,7 @@ matrix_triple* serial_multiplication(matrix_triple* matrix_triple_)
 
 	//broj sabiraka koji odredjuje broj iteracija u unutrasnjoj petlji
 	UINT_ n_addends = matrix_triple_->multiplier.n_cols; //matrix_triple_->multiplicand.n_rows
+
 	//iteriramo po vrstama matrice proizvoda
 	for (UINT_ i = 0; i < product.n_rows; ++i)
 	{

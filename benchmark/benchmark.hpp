@@ -129,5 +129,6 @@ public:
 };
 
 //kako uporediti dva algorithms objekta
+// (pri proveri da li je izabran koji algoritam)
 static inline bool operator==(const Benchmark::algorithms_t& first,
 	const Benchmark::algorithms_t& second);
