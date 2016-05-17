@@ -53,7 +53,6 @@ void CLI::display_menu()
 
 	bool out = false;
 	int option;
-	std::string dummy;
 	while (!out) {
 		std::string menu_str = LINIJA;
 		menu_str += \
@@ -71,7 +70,7 @@ void CLI::display_menu()
 [6] Pomnozi ucitane / generisane matrice\n\
 [7] Prikazi proizvod i vreme mnozenja\n\
 [8] Izvrsi benchmark\n\
-[9] Sacuvaj rezultate bencmark - a u.txt fajl\n\
+[9] Sacuvaj rezultate benchmark - a u tekst. fajl\n\
 [0] Izadji iz programa\n"
 + LINIJA
 + ">> ";
@@ -103,15 +102,16 @@ void CLI::display_menu()
 			run_benchmark();
 			break;
 		case 9:
-			save_benchmark_results();
+			save_benchmark_results("");
 			break;
 		case 0:
 			out = true;
 			break;
 		default:
-			std::cout << "-------------------------------------------------" << std::endl;
+			std::cout << LINIJA;
 			std::cout << "Odaberite jednu od ponudjenih opcija !!!" << std::endl;
-			std::getline(std::cin, dummy);
+			int dummy;
+			get_input(dummy);
 			break;
 		}
 	}
@@ -135,12 +135,20 @@ void CLI::load_matrices()
 	if (!success)
 	{
 		std::cout << LINIJA;
-		std::cout << "Neuspesno ucitavanje matrica!!!";
+		std::cout << "Neuspesno ucitavanje matrica iz fajla: " << working_dir + filename << std::endl;
+		int dummy;
+		get_input(dummy);
+		pair_present = false;
 	}
 	else
 	{
 		pair_present = true;
+		std::cout << LINIJA;
+		std::cout << "Par matrica uspesno ucitan iz fajla: " << working_dir + filename << std::endl;
+		int dummy;
+		get_input(dummy);
 	}
+	pair_multiplied = false;
 }
 
 void CLI::generate_matrices()
@@ -163,13 +171,22 @@ void CLI::generate_matrices()
 
 	if (!triple->OK)
 	{
+		pair_present = false;
 		std::cout << LINIJA;
-		std::cout << "Neuspesno generisanje matrica!!!";
+		std::cout << "Neuspesno generisanje matrica!!!" << std::endl;
+		int dummy;
+		get_input(dummy);
+
 	}
 	else
 	{
 		pair_present = true;
+		std::cout << LINIJA;
+		std::cout << "Par matrica uspesno generisan." << std::endl;
+		int dummy;
+		get_input(dummy);
 	}
+	pair_multiplied = false;
 }
 
 void CLI::display_matrices()
@@ -215,6 +232,13 @@ Da li zelite da prikazete matrice ili samo njihove dimenzije? [1/0]\n>> ";
 			get_input(choice);
 		}
 	}
+	else
+	{
+		std::cout << LINIJA;
+		std::cout << "Matrice nisu ucitane/generisane!!!" << std::endl;
+		int dummy;
+		get_input(dummy);
+	}
 }
 
 void CLI::save_matrices()
@@ -233,11 +257,25 @@ void CLI::save_matrices()
 		if (!success)
 		{
 			std::cout << LINIJA;
-			std::cout << "Neuspesno cuvanje fajla!!!" << std::endl;
+			std::cout << "Neuspesno cuvanje matrica u fajl: " << working_dir + filename << std::endl;
+			int dummy;
+			get_input(dummy);
+		}
+		else // uspeh
+		{
+			std::cout << LINIJA;
+			std::cout << "Matrice sacuvane u fajl: " << working_dir + filename << std::endl;
 			int dummy;
 			get_input(dummy);
 		}
 
+	}
+	else
+	{
+		std::cout << LINIJA;
+		std::cout << "Matrice nisu ucitane/generisane!!!" << std::endl;
+		int dummy;
+		get_input(dummy);
 	}
 }
 
@@ -281,15 +319,26 @@ void CLI::multiply_matrix_pair()
 		if (triple->last_multiplication_ok)
 		{
 			pair_multiplied = true;
+			std::cout << LINIJA;
+			std::cout << "Matrice uspesno pomnozene." << std::endl;
+			int dummy;
+			get_input(dummy);
 		}
 		else //mnozenje nije izvrseno
 		{
 			std::cout << LINIJA;
-			std::cout << "Neuspesno mnozenje!!!/nVerovatno ste menjali matrice u fajlu." << std::endl;
+			std::cout << "Neuspesno mnozenje!!!/nVerovatno ste menjali sadrzaj fajla iz kog su matrice ucitane." << std::endl;
 			int dummy;
 			get_input(dummy);
 		}
 
+	}
+	else
+	{
+		std::cout << LINIJA;
+		std::cout << "Matrice nisu ucitane/generisane!!!" << std::endl;
+		int dummy;
+		get_input(dummy);
 	}
 }
 
@@ -327,6 +376,13 @@ Da li zelite da prikazete matricu ili samo njene dimenzije? [1/0]\n>> ";
 			get_input(choice);
 		}
 	}
+	else
+	{
+		std::cout << LINIJA;
+		std::cout << "Matrice nisu pomnozene!!!" << std::endl;
+		int dummy;
+		get_input(dummy);
+	}
 }
 
 void CLI::run_benchmark()
@@ -344,7 +400,7 @@ void CLI::run_benchmark()
 	bool out = false;
 	bool executed = false;
 	int option;
-	std::string dummy;
+
 	while (!out) {
 		std::string menu_str = LINIJA;
 		menu_str += \
@@ -430,34 +486,27 @@ void CLI::run_benchmark()
 			if (bench->is_good())
 			{
 				//	cout << izvrsava se...
-				std::cout << "Benchmark se izvrsava, moze potrajati.\nMolimo sacekajte..." << std::endl;
+				std::cout << "Benchmark se izvrsava, moze potrajati neko vreme.\nMolimo sacekajte..." << std::endl;
 				//	izvrsi
 				bench->run();
+
+				benchmark_executed = bench->is_executed();
 				//	sacuvaj rezultate
 				if (filename != "")
 				{
-					bool success = true;
-					////////////////
-					//success = bench->save_results(working_dir, filename);
-					////////////////
-					if (!success)
-					{
-						std::cout << LINIJA;
-						std::cout << "Neuspesno cuvanje rezultata u fajl!!!\nMozete ih sacuvati iz glavnog menija." << std::endl;
-						int dummy;
-						get_input(dummy);
-					}
+					save_benchmark_results(filename);
 				}
-				benchmark_executed = bench->is_executed();
-				out = bench->is_executed();
+				out = true;
 			}
 			//else
-			else //nisu ok parametri
+			else //parametri nisu ok
 			{
+				benchmark_executed = false;
 				//	cout << err_msg
 				std::cout << LINIJA;
 				std::cout << bench->get_err_msg() << std::endl;
-				std::getline(std::cin, dummy);
+				int dummy;
+				get_input(dummy);
 			}
 			break;
 		case 0:
@@ -465,17 +514,51 @@ void CLI::run_benchmark()
 			break;
 		default:
 			std::cout << "-------------------------------------------------" << std::endl;
-			std::cout << "Odaberite jednu od ponudjenih opcija !!!" << std::endl;
-			std::getline(std::cin, dummy);
+			std::cout << "Odaberite jednu od ponudjenih opcija!!!" << std::endl;
+			int dummy;
+			get_input(dummy);
 			break;
 		}
 	}
 }
 
-void CLI::save_benchmark_results()
+void CLI::save_benchmark_results(std::string filename)
 {
 	if (benchmark_executed)
 	{
-		// uradi fju u Benchmark klasi sa hendlovanjem error-a (is_open() etc.)
+		if (filename == "")
+		{
+			//ucitaj ime fajla
+			std::cout << LINIJA;
+			std::cout << "Unesite ime fajla u koji zelite da sacuvate rezultate\n>> ";
+			getline(std::cin, filename);
+		}
+
+		bool success = false;
+
+		success = bench->save_results_string_to_file(working_dir, filename);
+
+		if (success)
+		{
+			std::cout << LINIJA;
+			std::cout << "Rezultati sacuvani u fajl: " << working_dir + filename << std::endl;
+			int dummy;
+			get_input(dummy);
+		}
+		else //neuspesno cuvanje u fajl
+		{
+			std::cout << LINIJA;
+			std::cout << "Neuspesno cuvanje rezultata u fajl: " << working_dir + filename << 
+				"\nMozete ih sacuvati iz glavnog menija." << std::endl;
+			int dummy;
+			get_input(dummy);
+		}
+	}
+	else
+	{
+		std::cout << LINIJA;
+		std::cout << "Benchmark nije izvrsen!!!" << std::endl;
+		int dummy;
+		get_input(dummy);
 	}
 }

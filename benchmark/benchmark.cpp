@@ -2,6 +2,8 @@
 #include "../multiplication/multiplication.hpp"
 #include "../matrices/matrices.hpp"
 
+#include <fstream>
+
 // ------------------- Benchmark klasa -----------------
 
 Benchmark::algorithms_t Benchmark::get_algorithms_struct()
@@ -242,6 +244,22 @@ std::string Benchmark::get_results_string()
 	}
 
 	return output;
+}
+
+bool Benchmark::save_results_string_to_file(std::string folder, std::string filepath)
+{
+	bool success = false;
+	std::ofstream output_file(folder + filepath);
+	//ako je fajl otvoren i benchmark izvrsen
+	if (output_file.is_open() || last_run_ok)
+	{
+		//sacuvaj rezultate
+		output_file << get_results_string();
+		output_file.close();
+		success = true;
+	}
+
+	return success;
 }
 
 

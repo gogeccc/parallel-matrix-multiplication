@@ -123,8 +123,12 @@ public:
 	std::string get_err_msg();
 
 	std::map<UINT_, Benchmark::results_t> get_results_map();
-	//vrati true ako je popunjavanje stringa proslo bez problema
+	//vrati string sa rezultatima
 	std::string get_results_string();
+
+	//sacuvaj rezultate benchmarka u fajl.
+	//Vrati true ako cuvanje bude uspesno.
+	bool save_results_string_to_file(std::string folder, std::string filename);
 
 };
 

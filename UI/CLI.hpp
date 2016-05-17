@@ -29,5 +29,5 @@ public:
 	void multiply_matrix_pair();
 	void display_product_details();
 	void run_benchmark();
-	void save_benchmark_results();
+	void save_benchmark_results(std::string filename);
 };

@@ -1,0 +1,113 @@
+----------------------------------------------
+----------------------------------------------
+Velicina matrice: 5 x 5; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 0 ms
+Paralelni: 0 ms
+
+----------------------------------------------
+Velicina matrice: 6 x 6; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 0 ms
+Paralelni: 0 ms
+
+----------------------------------------------
+Velicina matrice: 7 x 7; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 0 ms
+Paralelni: 0 ms
+
+----------------------------------------------
+Velicina matrice: 8 x 8; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 0 ms
+Paralelni: 0 ms
+
+----------------------------------------------
+Velicina matrice: 9 x 9; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 0 ms
+Paralelni: 0 ms
+
+----------------------------------------------
+Velicina matrice: 10 x 10; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 0 ms
+Paralelni: 0 ms
+
+----------------------------------------------
+Velicina matrice: 11 x 11; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 0 ms
+Paralelni: 0 ms
+
+----------------------------------------------
+Velicina matrice: 12 x 12; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 0 ms
+Paralelni: 0 ms
+
+----------------------------------------------
+Velicina matrice: 13 x 13; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 0 ms
+Paralelni: 0 ms
+
+----------------------------------------------
+Velicina matrice: 14 x 14; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 0 ms
+Paralelni: 0 ms
+
+----------------------------------------------
+Velicina matrice: 15 x 15; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 1 ms
+Paralelni: 0 ms
+
+----------------------------------------------
+Velicina matrice: 16 x 16; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 1 ms
+Paralelni: 0 ms
+
+----------------------------------------------
+Velicina matrice: 17 x 17; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 1 ms
+Paralelni: 0 ms
+
+----------------------------------------------
+Velicina matrice: 18 x 18; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 1 ms
+Paralelni: 1 ms
+
+----------------------------------------------
+Velicina matrice: 19 x 19; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 1 ms
+Paralelni: 1 ms
+
+----------------------------------------------
+Velicina matrice: 20 x 20; 5 ciklusa
+----------------------------------------------
+Armadillo: 0 ms
+Serijski: 2 ms
+Paralelni: 1 ms
+
