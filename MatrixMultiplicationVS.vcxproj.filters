@@ -5,20 +5,20 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="matrices">
-      <UniqueIdentifier>{048f7687-366f-4492-8d99-510a96f51ee3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="UI">
-      <UniqueIdentifier>{8d183ed7-7abe-4761-aac6-58ae8e14980c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="multiplication">
-      <UniqueIdentifier>{992efa9a-f12e-46d1-a6fd-face60fff1e3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="benchmark">
-      <UniqueIdentifier>{1cf68241-30c9-4302-8a71-1a86978f1c65}</UniqueIdentifier>
-    </Filter>
     <Filter Include="root">
       <UniqueIdentifier>{4fb7fe52-a8a5-4faf-a3d1-a51bc345bdf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="root\UI">
+      <UniqueIdentifier>{8d183ed7-7abe-4761-aac6-58ae8e14980c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="root\multiplication">
+      <UniqueIdentifier>{992efa9a-f12e-46d1-a6fd-face60fff1e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="root\matrices">
+      <UniqueIdentifier>{048f7687-366f-4492-8d99-510a96f51ee3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="root\benchmark">
+      <UniqueIdentifier>{1cf68241-30c9-4302-8a71-1a86978f1c65}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -29,25 +29,25 @@
       <Filter>root</Filter>
     </ClCompile>
     <ClCompile Include="benchmark\benchmark.cpp">
-      <Filter>benchmark</Filter>
+      <Filter>root\benchmark</Filter>
     </ClCompile>
     <ClCompile Include="UI\CLI.cpp">
-      <Filter>UI</Filter>
+      <Filter>root\UI</Filter>
     </ClCompile>
     <ClCompile Include="UI\UI.cpp">
-      <Filter>UI</Filter>
+      <Filter>root\UI</Filter>
     </ClCompile>
     <ClCompile Include="multiplication\multiplication.cpp">
-      <Filter>multiplication</Filter>
+      <Filter>root\multiplication</Filter>
     </ClCompile>
     <ClCompile Include="multiplication\parallel_multiplication.cpp">
-      <Filter>multiplication</Filter>
+      <Filter>root\multiplication</Filter>
     </ClCompile>
     <ClCompile Include="matrices\matrices.cpp">
-      <Filter>matrices</Filter>
+      <Filter>root\matrices</Filter>
     </ClCompile>
     <ClCompile Include="matrices\random.cpp">
-      <Filter>matrices</Filter>
+      <Filter>root\matrices</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -60,25 +60,25 @@
       <Filter>root</Filter>
     </ClInclude>
     <ClInclude Include="benchmark\benchmark.hpp">
-      <Filter>benchmark</Filter>
+      <Filter>root\benchmark</Filter>
     </ClInclude>
     <ClInclude Include="UI\CLI.hpp">
-      <Filter>UI</Filter>
+      <Filter>root\UI</Filter>
     </ClInclude>
     <ClInclude Include="UI\UI.hpp">
-      <Filter>UI</Filter>
+      <Filter>root\UI</Filter>
     </ClInclude>
     <ClInclude Include="multiplication\multiplication.hpp">
-      <Filter>multiplication</Filter>
+      <Filter>root\multiplication</Filter>
     </ClInclude>
     <ClInclude Include="multiplication\parallel_multiplication.hpp">
-      <Filter>multiplication</Filter>
+      <Filter>root\multiplication</Filter>
     </ClInclude>
     <ClInclude Include="matrices\matrices.hpp">
-      <Filter>matrices</Filter>
+      <Filter>root\matrices</Filter>
     </ClInclude>
     <ClInclude Include="matrices\random.hpp">
-      <Filter>matrices</Filter>
+      <Filter>root\matrices</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

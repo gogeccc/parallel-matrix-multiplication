@@ -287,32 +287,38 @@ void CLI::multiply_matrix_pair()
 		int choice;
 
 		std::cout << LINIJA;
-		std::cout << "[0] Armadillo algoritam" << std::endl;
-		std::cout << "[1] Paralelni algoritam" << std::endl;
-		std::cout << "[2] Serijski algoritam" << std::endl;
+		std::cout << "[0] nazad" << std::endl;
+		std::cout << "[1] Armadillo algoritam" << std::endl;
+		std::cout << "[2] Paralelni algoritam" << std::endl;
+		std::cout << "[3] Serijski algoritam" << std::endl;
+		std::cout << "[0] nazad" << std::endl;
 		std::cout << "Unesi broj ispred zeljenog algoritma\n>> ";
 		get_input(choice);
 
-		if (choice == 0)
+		if (choice == 1)
 		{
 			last_algorithm = "Armadillo";
 			multiply_pair(triple, multiply::arma);
 			last_time = triple->arma_time;
 			last_product = &triple->arma_product;
 		}
-		else if (choice == 1)
+		else if (choice == 2)
 		{
 			last_algorithm = "Paralelni";
 			multiply_pair(triple, multiply::parallel);
 			last_time = triple->parallel_time;
 			last_product = &triple->parallel_product;
 		}
-		else if (choice == 2)
+		else if (choice == 3)
 		{
 			last_algorithm = "Serijski";
 			multiply_pair(triple, multiply::serial);
 			last_time = triple->serial_time;
 			last_product = &triple->serial_product;
+		}
+		else
+		{
+			return;
 		}
 
 		//proveriti da li je mnozenje bilo ok

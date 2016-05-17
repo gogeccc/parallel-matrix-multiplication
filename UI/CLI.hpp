@@ -14,13 +14,8 @@ private:
 	std::string last_algorithm;
 	matrix* last_product;
 
-public:
-	CLI();
-	~CLI();
 
 	void get_input(int& var);
-	void display_menu();
-
 	void set_working_dir_cli();
 	void load_matrices();
 	void generate_matrices();
@@ -30,4 +25,11 @@ public:
 	void display_product_details();
 	void run_benchmark();
 	void save_benchmark_results(std::string filename);
+
+public:
+	CLI();
+	~CLI();
+
+	void display_menu();
+
 };
